@@ -31,11 +31,134 @@ Then include in your html:
 ## Basic use
 To use any MDL component, you must include the minified CSS and JavaScript files using standard relative-path references in the `<head>` section of the page, as described in the MDL Introduction.
 
-### To include a MDL **date textfield** component:
+### To include a MDL **slideout** component:
 
-&nbsp;1. Code a `<div>` element to hold the date text field.
+&nbsp;1. Code a `<div>` element to hold the slideout.
 ```html
 <div>
 ...
 </div>
+```
+&nbsp;2. Code a `<div>` element directly after the previous to hold the slideout overlay.
+```html
+<div>
+...
+</div>
+<div>
+...
+</div>
+```
+&nbsp;3. Inside the slideout div, code an `<div>` element to be used for the slideout tile.
+```html
+<div>
+  <div></div>
+</div>
+<div><div>
+```
+&nbsp;4. Also inside the div, after the `<div>` element, code another `<div>` element to be used for the slideout actions.
+```html
+<div>
+  <div></div>
+  <div><div>
+</div>
+<div><div>
+```
+&nbsp;5. Also inside the div, after the `<div>` elements, code another `<div>` element to be used for the slideout content.
+```html
+<div>
+  <div></div>
+  <div><div>
+  <div><div>
+</div>
+<div><div>
+```
+&nbsp;6. Add one or more MDL classes, separated by spaces, to the div container, title div, action div, content div, and overlay div using the `class` attribute.
+```html
+<div class="mdl-slideout mdl-js-slideout mdl-slideout--right">
+  <div class="mdl-slideout__title"></div>
+  <div class="mdl-slideout__actions"><div>
+  <div class="mdl-slideout__content"><div>
+</div>
+<div class="mdl-slideout__overlay"><div>
+```
+The slideout component is ready for use.
+
+To Show the slideout:
+```js
+var slideout = document.querySelectorAll(".mdl-slideout")[0];
+slideout.MaterialSlideout.show();
+```
+
+To Hide the slideout:
+```js
+var slideout = document.querySelectorAll(".mdl-slideout")[0];
+slideout.MaterialSlideout.hide();
+```
+
+#### Examples
+
+Slideout with no title or actions (content only)
+```html
+<div class="mdl-slideout mdl-js-slideout mdl-slideout--right">
+    <div class="mdl-slideout__content">
+        This is sample content
+    </div>
+</div>
+<div class="mdl-slideout__overlay"></div>
+```
+
+Slideout from right with title and actions
+```html
+<div class="mdl-slideout mdl-js-slideout mdl-slideout--right">
+    <div class="mdl-slideout__title">Right Slideout Title</div>
+    <div class="mdl-slideout__actions">
+        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Hide This</button>
+    </div>
+    <div class="mdl-slideout__content">
+         This is sample content
+    </div>
+</div>
+<div class="mdl-slideout__overlay"></div>
+```
+
+Slideout from left with title and actions
+```html
+<div class="mdl-slideout mdl-js-slideout mdl-slideout--left">
+    <div class="mdl-slideout__title">Left Slideout Title</div>
+    <div class="mdl-slideout__actions">
+        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Hide This</button>
+    </div>
+    <div class="mdl-slideout__content">
+         This is sample content
+    </div>
+</div>
+<div class="mdl-slideout__overlay"></div>
+```
+
+Slideout from top with title and actions
+```html
+<div class="mdl-slideout mdl-js-slideout mdl-slideout--top">
+    <div class="mdl-slideout__title">Left Slideout Title</div>
+    <div class="mdl-slideout__actions">
+        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Hide This</button>
+    </div>
+    <div class="mdl-slideout__content">
+         This is sample content
+    </div>
+</div>
+<div class="mdl-slideout__overlay"></div>
+```
+
+Slideout from bottom with title and actions
+```html
+<div class="mdl-slideout mdl-js-slideout mdl-slideout--bottom">
+    <div class="mdl-slideout__title">Left Slideout Title</div>
+    <div class="mdl-slideout__actions">
+        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Hide This</button>
+    </div>
+    <div class="mdl-slideout__content">
+         This is sample content
+    </div>
+</div>
+<div class="mdl-slideout__overlay"></div>
 ```
