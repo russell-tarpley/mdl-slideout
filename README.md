@@ -12,6 +12,10 @@ An Material Design Lite slideout pane implementation (https://github.com/google/
 
 > A custom implementation of a slideout panel for [Material Design Lite](https://github.com/google/material-design-lite)
 
+## Live Example
+
+Check out the [CodePen](http://codepen.io/Rathxxx/pen/rWQOVB)
+
 ## Install
 
 Via npm:
