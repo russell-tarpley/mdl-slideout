@@ -12,6 +12,7 @@
     <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored right-show">Show Right</button>
     <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored left-show">Show Left</button>
     <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored top-show">Show Top</button>
+    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored bottom-show">Show Bottom</button>
 
     <div class="mdl-slideout mdl-js-slideout mdl-slideout--right">
         <div class="mdl-slideout__title">Right Slideout Title</div>
@@ -21,8 +22,8 @@
         <div class="mdl-slideout__content">
             This is test content
         </div>
-        <div class="mdl-slideout__overlay"></div>
     </div>
+    <div class="mdl-slideout__overlay"></div>
     <div class="mdl-slideout mdl-js-slideout mdl-slideout--left">
         <div class="mdl-slideout__title">Left Slideout Title</div>
         <div class="mdl-slideout__actions">
@@ -31,8 +32,8 @@
         <div class="mdl-slideout__content">
             This is test content
         </div>
-        <div class="mdl-slideout__overlay"></div>
     </div>
+    <div class="mdl-slideout__overlay"></div>
     <div class="mdl-slideout mdl-js-slideout mdl-slideout--top">
         <div class="mdl-slideout__title">Top Slideout Title</div>
         <div class="mdl-slideout__actions">
@@ -41,9 +42,18 @@
         <div class="mdl-slideout__content">
             This is test content
         </div>
-        <div class="mdl-slideout__overlay"></div>
     </div>
-    
+    <div class="mdl-slideout__overlay"></div>
+    <div class="mdl-slideout mdl-js-slideout mdl-slideout--bottom">
+        <div class="mdl-slideout__title">Bottom Slideout Title</div>
+        <div class="mdl-slideout__actions">
+            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent bottom-hide">Hide This</button>
+        </div>
+        <div class="mdl-slideout__content">
+            This is test content
+        </div>
+    </div>
+    <div class="mdl-slideout__overlay"></div>
     <script>
         var components = document.querySelectorAll(".mdl-slideout");
         componentHandler.upgradeElements(components);
@@ -67,6 +77,12 @@
             slideout.MaterialSlideout.show();
         });
 
+        var topShow = document.querySelectorAll(".bottom-show")[0];
+        topShow.addEventListener("click", function () {
+            var slideout = document.querySelectorAll(".mdl-slideout--bottom")[0];
+            slideout.MaterialSlideout.show();
+        });
+
         //bind click events to hide slideouts
         var rightHide = document.querySelectorAll(".right-hide")[0];
         rightHide.addEventListener("click", function () {
@@ -83,6 +99,12 @@
         var topHide = document.querySelectorAll(".top-hide")[0];
         topHide.addEventListener("click", function () {
             var slideout = document.querySelectorAll(".mdl-slideout--top")[0];
+            slideout.MaterialSlideout.hide();
+        });
+
+        var topHide = document.querySelectorAll(".bottom-hide")[0];
+        topHide.addEventListener("click", function () {
+            var slideout = document.querySelectorAll(".mdl-slideout--bottom")[0];
             slideout.MaterialSlideout.hide();
         });
 

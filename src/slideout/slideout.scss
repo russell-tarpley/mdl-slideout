@@ -13,7 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+$slideout-primary-color: unquote("rgb(#{$color-primary})") !default;
 $slideout-background-color: unquote("rgb(#{$color-white})") !default;
+$slideout-action-color: unquote("rgb(#{$palette-grey-50})") !default;
 
 // The container for the whole component.
 .mdl-slideout {
@@ -32,6 +34,7 @@ $slideout-background-color: unquote("rgb(#{$color-white})") !default;
 }
 
 .mdl-slideout--right {
+    position:fixed;
     height: 100%;
     max-height: 100%;
     overflow-y: auto;
@@ -59,6 +62,17 @@ $slideout-background-color: unquote("rgb(#{$color-white})") !default;
     height: 500px;
 }
 
+.mdl-slideout--bottom {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    transform: translateY(500px);
+    height: 500px;
+}
+
 .mdl-slideout__title {
     display: block;
     font-size: 20px;
@@ -67,7 +81,7 @@ $slideout-background-color: unquote("rgb(#{$color-white})") !default;
     font-weight: 400;
     box-sizing: border-box;
     margin: 0px;
-    background-color: $color-primary;
+    background-color: $slideout-primary-color;
     color: rgb(255,255,255);
 }
 
@@ -112,7 +126,7 @@ $slideout-background-color: unquote("rgb(#{$color-white})") !default;
 }
 
 .mdl-slideout__actions {
-    background-color: $palette-grey-50;
+    background-color: $slideout-action-color;
     margin: 0px;
     padding: 8px;
     font-size: 16px;

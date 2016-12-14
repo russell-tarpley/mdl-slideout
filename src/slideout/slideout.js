@@ -68,8 +68,8 @@
      * @public
      */
     MaterialSlideout.prototype.hide = function () {
-        this.element_.className = this.element_.className.replace('.' + this.CssClasses_.IS_ACTIVE);
-        this.element_.className = this.overlay_.className.replace('.' + this.CssClasses_.IS_ACTIVE);
+        this.element_.className = this.element_.className.replace(this.CssClasses_.IS_ACTIVE,'');
+        this.overlay_.className = this.overlay_.className.replace(this.CssClasses_.IS_ACTIVE,'');
     };
     MaterialSlideout.prototype['hide'] = MaterialSlideout.prototype.hide;
 
@@ -79,7 +79,7 @@
     MaterialSlideout.prototype.init = function () {
 
         if (this.element_) {
-            this.overlay_ = this.element_.querySelector('.' + this.CssClasses_.OVERLAY);
+            this.overlay_ = this.element_.nextElementSibling;
             this.title_ = this.element_.querySelector('.' + this.CssClasses_.TITLE);
             this.actions_ = this.element_.querySelector('.' + this.CssClasses_.ACTIONS);
         }
