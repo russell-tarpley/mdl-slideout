@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <link href="../bower_components/material-design-lite/material.min.css" rel="stylesheet" />
+    <link href="../dist/mdl-slideout.min.css" rel="stylesheet" />
+    <script src="../bower_components/material-design-lite/material.min.js"></script>
+    <script src="../dist/mdl-slideout.min.js"></script>
+</head>
+<body>
+    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored right-show">Show Right</button>
+    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored left-show">Show Left</button>
+    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored top-show">Show Top</button>
+
+    <div class="mdl-slideout mdl-js-slideout mdl-slideout--right">
+        <div class="mdl-slideout__title">Right Slideout Title</div>
+        <div class="mdl-slideout__actions">
+            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent right-hide">Hide This</button>
+        </div>
+        <div class="mdl-slideout__content">
+            This is test content
+        </div>
+        <div class="mdl-slideout__overlay"></div>
+    </div>
+    <div class="mdl-slideout mdl-js-slideout mdl-slideout--left">
+        <div class="mdl-slideout__title">Left Slideout Title</div>
+        <div class="mdl-slideout__actions">
+            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent left-hide">Hide This</button>
+        </div>
+        <div class="mdl-slideout__content">
+            This is test content
+        </div>
+        <div class="mdl-slideout__overlay"></div>
+    </div>
+    <div class="mdl-slideout mdl-js-slideout mdl-slideout--top">
+        <div class="mdl-slideout__title">Top Slideout Title</div>
+        <div class="mdl-slideout__actions">
+            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent top-hide">Hide This</button>
+        </div>
+        <div class="mdl-slideout__content">
+            This is test content
+        </div>
+        <div class="mdl-slideout__overlay"></div>
+    </div>
+    
+    <script>
+        var components = document.querySelectorAll(".mdl-slideout");
+        componentHandler.upgradeElements(components);
+
+        //Bind click events to show slideouts
+        var rightShow = document.querySelectorAll(".right-show")[0];
+        rightShow.addEventListener("click", function () {
+            var slideout = document.querySelectorAll(".mdl-slideout--right")[0];
+            slideout.MaterialSlideout.show();
+        });
+
+        var leftShow = document.querySelectorAll(".left-show")[0];
+        leftShow.addEventListener("click", function () {
+            var slideout = document.querySelectorAll(".mdl-slideout--left")[0];
+            slideout.show();
+        });
+
+        var topShow = document.querySelectorAll(".top-show")[0];
+        topShow.addEventListener("click", function () {
+            var slideout = document.querySelectorAll(".mdl-slideout--top")[0];
+            slideout.show();
+        });
+
+        //bind click events to hide slideouts
+        var rightHide = document.querySelectorAll(".right-hide")[0];
+        rightHide.addEventListener("click", function () {
+            var slideout = document.querySelectorAll(".mdl-slideout--right")[0];
+            slideout.MaterialSlideout.hide();
+        });
+
+        var leftHide = document.querySelectorAll(".left-hide")[0];
+        leftHide.addEventListener("click", function () {
+            var slideout = document.querySelectorAll(".mdl-slideout--left")[0];
+            slideout.MaterialSlideout.hide();
+        });
+
+        var topHide = document.querySelectorAll(".top-hide")[0];
+        topHide.addEventListener("click", function () {
+            var slideout = document.querySelectorAll(".mdl-slideout--top")[0];
+            slideout.MaterialSlideout.hide();
+        });
+
+    </script>
+</body>
+</html>

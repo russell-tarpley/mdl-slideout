@@ -1,0 +1,34 @@
+{
+  "name": "mdl-slideout",
+  "version": "1.0.0",
+  "homepage": "https://github.com/rathxxx/mdl-slideout",
+  "authors": [
+    "Russell Tarpley <russell.tarpley@gmail.com>"
+  ],
+  "description": "mdl-slideout for material-design-lite",
+  "main": [
+    "dist/mdl-slideout.min.css",
+    "dist/mdl-slideout.min.js"
+  ],
+  "keywords": [
+    "material",
+    "design",
+    "styleguide",
+    "style",
+    "guide",
+    "mdl",
+    "currency",
+    "usd"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "material-design-lite": "~1.2.1"
+  }
+}
